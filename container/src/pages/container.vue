@@ -57,14 +57,14 @@ export default {
   mounted() {
     registerMicroApps([
       {
-        name: "people", // app name registered
-        entry: "//localhost:8001",
+        name: "people-app", // app name registered
+        entry: process.env.NODE_ENV==='production'?'/microapps/people/':"//localhost:8001",
         container: "#micro-app",
         activeRule: "/app-people",
       },
       {
-        name: "permission",
-        entry: "//localhost:8002",
+        name: "permission-app",
+        entry: process.env.NODE_ENV==='production'?'/microapps/permission/':"//localhost:8002",
         container: "#micro-app",
         activeRule: "/app-permission",
       },
